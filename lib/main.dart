@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/switch_account.dart';
 
 void main() {
   runApp(const Application());
@@ -35,15 +36,28 @@ class SplashScreen extends StatelessWidget {
           alignment: AlignmentDirectional.bottomCenter,
           children: [
             Center(
-              child: Image(image: AssetImage('images/splash_screen/logo.png')),
+              child: Image(
+                image: AssetImage('images/splash_screen/logo.png'),
+              ),
             ),
-
             Positioned(
               bottom: 41,
               child: Column(
                 children: [
-                  Text('From', style: TextStyle(color: Color(0xFF7A7A7D)),),
-                  Text('Cafe Flutter', style: TextStyle(color: Color(0xFF5263FC)),),
+                  Text(
+                    'From',
+                    style: TextStyle(
+                      color: Color(0xFF7A7A7D),
+                      fontFamily: 'Gilroy-bold',
+                    ),
+                  ),
+                  Text(
+                    'Cafe Flutter',
+                    style: TextStyle(
+                      color: Color(0xFF5263FC),
+                      fontFamily: 'Gilroy-bold',
+                    ),
+                  ),
                 ],
               ),
             )
