@@ -26,18 +26,31 @@ flutter:
   uses-material-design: true
 
   assets:
-    - images/
+    - assets/images/
 
 
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  fonts:
+  
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy_Regular.ttf
+
+    - family: Gilroy-medium
+      fonts:
+        - asset: assets/fonts/Gilroy_Medium.ttf
+
+    - family: Gilroy-semibold
+      fonts:
+        - asset: assets/fonts/Gilroy_SemiBold.ttf
+
+    - family: Gilroy-bold
+      fonts:
+        - asset: assets/fonts/Gilroy_Bold.ttf
+
+    - family: IranSans
+      fonts:
+        - asset: assets/fonts/IRANSans_Regular.ttf
+
+    - family: IranSans-bold
+      fonts:
+        - asset: assets/fonts/IRANSans_Bold.ttf
