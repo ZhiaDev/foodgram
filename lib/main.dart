@@ -11,8 +11,26 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //
+      theme: ThemeData(
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            minimumSize: Size(128, 46),
+            backgroundColor: Color(0xFF5263FC),
+            foregroundColor: Color(0xFF14151C),
+            textStyle: TextStyle(
+              fontSize: 16,
+              color: Colors.white,
+              fontFamily: 'Gilroy-bold',
+            ),
+          ),
+        ),
+      ),
+      //
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: SwitchAccountScreen(),
     );
   }
 }
