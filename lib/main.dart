@@ -1,4 +1,7 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
+import '../screens/login_screen.dart';
 import '../screens/switch_account.dart';
 
 void main() {
@@ -30,7 +33,7 @@ class Application extends StatelessWidget {
       ),
       //
       debugShowCheckedModeBanner: false,
-      home: SwitchAccountScreen(),
+      home: SplashScreen(),
     );
   }
 }
@@ -45,7 +48,7 @@ class SplashScreen extends StatelessWidget {
         color: Color(0xFF14151C),
         image: DecorationImage(
           repeat: ImageRepeat.repeat,
-          image: AssetImage('images/splash_screen/pattern.png'),
+          image: AssetImage('assets/images/splash_screen/pattern.png'),
         ),
       ),
       child: Scaffold(
@@ -55,7 +58,7 @@ class SplashScreen extends StatelessWidget {
           children: [
             Center(
               child: Image(
-                image: AssetImage('images/splash_screen/logo.png'),
+                image: AssetImage('assets/images/splash_screen/logo.png'),
               ),
             ),
             Positioned(
