@@ -28,7 +28,7 @@ class SwitchAccountScreen extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  'images/switch_account/background_picture.png',
+                  'assets/images/switch_account/background_picture.png',
                 ),
               ),
             ),
@@ -95,7 +95,7 @@ class SwitchAccountScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(24),
                       child: Image(
                         image: AssetImage(
-                          'images/switch_account/avatar.png',
+                          'assets/images/switch_account/avatar.png',
                         ),
                         height: 130,
                       ),
