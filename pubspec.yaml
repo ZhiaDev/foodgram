@@ -26,7 +26,12 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
+    - assets/images/splash_screen/pattern.png
+    - assets/images/splash_screen/logo.png
+    - assets/images/switch_account/background_picture.png
+    - assets/images/switch_account/avatar.png
+    - assets/images/login_screen/logo.png
+    - assets/images/login_screen/rocket.png
 
 
   fonts:
