@@ -33,7 +33,7 @@ class Application extends StatelessWidget {
       ),
       //
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: LoginScreen(),
     );
   }
 }
