@@ -32,6 +32,7 @@ flutter:
     - assets/images/switch_account/avatar.png
     - assets/images/login_screen/logo.png
     - assets/images/login_screen/rocket.png
+    - assets/images/login_screen/background.png
 
 
   fonts:
