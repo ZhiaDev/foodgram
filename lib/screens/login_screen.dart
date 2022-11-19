@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // گردینت پیش زمینه
+        // Background gradient
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -38,30 +38,24 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Stack(
           alignment: AlignmentDirectional.bottomCenter,
           children: [
-            _getImageContainer(), // عکس راکت
-            _getContainerBox(),
+            _getImageBackground(), // rocket background
+            _getLoginContainer(),
           ],
         ),
       ),
     );
   }
 
-  Widget _getImageContainer() {
-    return Column(
+  Widget _getImageBackground() {
+    return Stack(
       children: [
-        Expanded(
-          flex: 55,
-          child: Image.asset('assets/images/login_screen/rocket.png'),
-        ),
-        Expanded(
-          flex: 45,
-          child: Container(),
-        )
+        Image.asset('assets/images/login_screen/rocket.png'),
+        Container()
       ],
     );
   }
 
-  Widget _getContainerBox() {
+  Widget _getLoginContainer() {
     return Column(
       children: [
         Expanded(
@@ -114,11 +108,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                         labelText: '  Email ',
                         labelStyle: TextStyle(
-                            color: focusNode1.hasFocus
-                                ? Color(0xFF5263FC)
-                                : Color(0xFFFFFFFF),
-                            fontSize: 15,
-                            fontFamily: 'Gilroy-medium'),
+                          color: focusNode1.hasFocus
+                              ? Color(0xFF5263FC)
+                              : Color(0xFFFFFFFF),
+                          fontSize: 15,
+                          fontFamily: 'Gilroy-medium',
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
@@ -144,20 +139,22 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
                       style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Gilroy-medium',
-                          fontSize: 15),
+                        color: Colors.white,
+                        fontFamily: 'Gilroy-medium',
+                        fontSize: 15,
+                      ),
                       focusNode: focusNode2,
                       decoration: InputDecoration(
                         contentPadding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                         labelText: '  Password ',
                         labelStyle: TextStyle(
-                            color: focusNode2.hasFocus
-                                ? Color(0xFF5263FC)
-                                : Color(0xFFFFFFFF),
-                            fontSize: 15,
-                            fontFamily: 'Gilroy-medium'),
+                          color: focusNode2.hasFocus
+                              ? Color(0xFF5263FC)
+                              : Color(0xFFFFFFFF),
+                          fontSize: 15,
+                          fontFamily: 'Gilroy-medium',
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
@@ -178,9 +175,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 32),
                   TextButton(
                     onPressed: () {},
-                    child: Text(
-                      'Sign in',
-                      style: TextStyle(color: Colors.white),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 3),
+                      child: Text(
+                        'Sign in',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                   SizedBox(height: 50),
