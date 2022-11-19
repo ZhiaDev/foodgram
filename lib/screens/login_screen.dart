@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Column(
       children: [
         Expanded(
-          flex: 47,
+          flex: 45,
           child: Container(),
         ),
         Expanded(
