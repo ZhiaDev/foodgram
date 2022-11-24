@@ -9,6 +9,7 @@ environment:
   sdk: '>=2.18.0 <3.0.0'
 
 dependencies:
+  flutter_svg: ^1.1.6
   flutter:
     sdk: flutter
 
@@ -30,8 +31,8 @@ flutter:
     - assets/images/splash_screen/logo.png
     - assets/images/switch_account/background_picture.png
     - assets/images/switch_account/avatar.png
-    - assets/images/login_screen/logo.png
     - assets/images/login_screen/rocket.png
+    - assets/images/login_screen/logo.svg
 
 
   fonts:
