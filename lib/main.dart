@@ -1,8 +1,8 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
-import '../screens/login_screen.dart';
-import '../screens/switch_account.dart';
+import 'screens/login.dart';
+import 'screens/switch.dart';
 
 void main() {
   runApp(const Application());
