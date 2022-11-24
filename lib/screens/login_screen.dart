@@ -187,20 +187,46 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 24,
+                          width: 183,
+                          child: Center(
+                            child: Text(
+                              'Don’t have an account?',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'Gilroy-bold',
+                                color: Color(0xFF898A8D),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                       Text(
-                        'Don’t have an account? / ',
+                        ' / ',
                         style: TextStyle(
                           fontSize: 16,
                           fontFamily: 'Gilroy-bold',
                           color: Color(0xFF898A8D),
                         ),
                       ),
-                      Text(
-                        'Sign up',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Gilroy-bold',
-                          color: Color(0xFFFFFFFF),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 24,
+                          width: 60,
+                          child: Center(
+                            child: Text(
+                              'Sign up',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'Gilroy-bold',
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ),
+                          ),
                         ),
                       )
                     ],
