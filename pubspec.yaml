@@ -33,6 +33,7 @@ flutter:
     - assets/images/switch_account/avatar.png
     - assets/images/login_screen/rocket.png
     - assets/images/login_screen/logo.svg
+    - assets/images/home_screen/plus.svg
 
 
   fonts:
