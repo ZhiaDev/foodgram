@@ -1,8 +1,9 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
-import 'screens/login.dart';
-import 'screens/switch.dart';
+import '../screens/home.dart';
+import '../screens/login.dart';
+import '../screens/switch.dart';
 
 void main() {
   runApp(const Application());
@@ -33,7 +34,7 @@ class Application extends StatelessWidget {
       ),
       //
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: HomeScreen(),
     );
   }
 }
