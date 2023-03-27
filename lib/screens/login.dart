@@ -27,6 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: Container(
         // Background gradient
         decoration: BoxDecoration(
@@ -73,34 +74,49 @@ class _LoginScreenState extends State<LoginScreen> {
                 topRight: Radius.circular(36),
               ),
             ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(width: double.infinity),
-                  SizedBox(height: 50),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Sign in to ',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontFamily: 'Gilroy-bold'),
+            child: Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                SizedBox(height: double.maxFinite),
+                SizedBox(width: double.infinity),
+
+                // Sign in Text and Logo
+                Positioned(
+                  top: 42,
+                  child: SizedBox(
+                    height: 32,
+                    child: Center(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Sign in to ',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontFamily: 'Gilroy-bold',
+                            ),
+                          ),
+                          SvgPicture.asset(
+                            'assets/images/login_screen/logo.svg',
+                            height: 25,
+                          )
+                        ],
                       ),
-                      SvgPicture.asset(
-                        'assets/images/login_screen/logo.svg',
-                        height: 25,
-                      )
-                    ],
+                    ),
                   ),
-                  SizedBox(height: 38),
-                  SizedBox(
+                ),
+
+                // Email Field
+                Positioned(
+                  top: 106,
+                  child: SizedBox(
                     height: 46,
                     width: 330,
                     child: TextField(
+                      cursorColor: Color(0xFF5263FC),
                       keyboardType: TextInputType.emailAddress,
                       style: TextStyle(
                           color: Colors.white,
@@ -135,11 +151,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 32),
-                  SizedBox(
+                ),
+
+                // Password Field
+                Positioned(
+                  top: 184,
+                  child: SizedBox(
                     height: 46,
                     width: 330,
                     child: TextField(
+                      cursorColor: Color(0xFF5263FC),
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
                       style: TextStyle(
@@ -176,8 +197,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 32),
-                  TextButton(
+                ),
+
+                // Sign in Button
+                Positioned(
+                  top: 262,
+                  child: TextButton(
                     onPressed: () {},
                     child: Padding(
                       padding: const EdgeInsets.only(top: 3),
@@ -187,8 +212,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 50),
-                  Row(
+                ),
+
+                // Sign up Button
+                Positioned(
+                  bottom: 64,
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
@@ -235,8 +264,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       )
                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

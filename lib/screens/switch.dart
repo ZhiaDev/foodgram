@@ -66,79 +66,89 @@ class SwitchAccountScreen extends StatelessWidget {
       fit: StackFit.expand,
       children: <Widget>[
         Center(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(36),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 32.0,
-                sigmaY: 32.0,
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.white.withOpacity(0.4),
+                width: 1,
               ),
-              child: Container(
-                height: 352,
-                width: 340,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(36),
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Color.fromRGBO(159, 158, 159, 0.5),
-                      Color.fromRGBO(159, 158, 159, 0.2)
+              borderRadius: BorderRadius.circular(36.8),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(36),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: 32.0,
+                  sigmaY: 32.0,
+                ),
+                child: Container(
+                  height: 352,
+                  width: 340,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(36),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.fromRGBO(159, 158, 159, 0.5),
+                        Color.fromRGBO(159, 158, 159, 0.2)
+                      ],
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 32),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(24),
+                        child: Image(
+                          image: AssetImage(
+                            'assets/images/switch_account/avatar.png',
+                          ),
+                          height: 130,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'Parsa Sharifi',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy-bold',
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 22),
+                      TextButton(
+                        onPressed: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 4),
+                          child: Text(
+                            'Confirm',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 12),
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          minimumSize: Size(170, 46),
+                          backgroundColor: Colors.transparent,
+                        ),
+                        onPressed: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 4),
+                          child: Text(
+                            'switch account',
+                            style: TextStyle(
+                              
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
-                ),
-                child: Column(
-                  children: [
-                    SizedBox(height: 32),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(24),
-                      child: Image(
-                        image: AssetImage(
-                          'assets/images/switch_account/avatar.png',
-                        ),
-                        height: 130,
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Text(
-                      'Parsa Sharifi',
-                      style: TextStyle(
-                        fontFamily: 'Gilroy-bold',
-                        fontSize: 18,
-                        color: Colors.white,
-                      ),
-                    ),
-                    SizedBox(height: 22),
-                    TextButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 4),
-                        child: Text(
-                          'Confirm',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 12),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        minimumSize: Size(170, 46),
-                        backgroundColor: Colors.transparent,
-                      ),
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 4),
-                        child: Text(
-                          'switch account',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ),

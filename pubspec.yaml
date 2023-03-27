@@ -10,6 +10,7 @@ environment:
 
 dependencies:
   flutter_svg: ^1.1.6
+  dotted_border: ^2.0.0+3
   flutter:
     sdk: flutter
 
@@ -27,13 +28,19 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/splash_screen/pattern.png
-    - assets/images/splash_screen/logo.png
-    - assets/images/switch_account/background_picture.png
-    - assets/images/switch_account/avatar.png
-    - assets/images/login_screen/rocket.png
-    - assets/images/login_screen/logo.svg
-    - assets/images/home_screen/plus.svg
+    - assets/images/splash_screen/
+    - assets/images/switch_account/
+    - assets/images/login_screen/
+    - assets/images/home_screen/
+    # - assets/images/splash_screen/pattern.png
+    # - assets/images/splash_screen/logo.png
+    # - assets/images/switch_account/background_picture.png
+    # - assets/images/switch_account/avatar.png
+    # - assets/images/login_screen/rocket.png
+    # - assets/images/login_screen/logo.svg
+    # - assets/images/home_screen/plus.svg
+    # - assets/images/home_screen/logo.svg
+    # - assets/images/home_screen/icn_messenger.svg
 
 
   fonts:

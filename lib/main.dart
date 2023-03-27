@@ -67,15 +67,17 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'From',
+                    'by',
                     style: TextStyle(
+                      fontSize: 16,
                       color: Color(0xFF7A7A7D),
                       fontFamily: 'Gilroy-bold',
                     ),
                   ),
                   Text(
-                    'Cafe Flutter',
+                    'KylixDev',
                     style: TextStyle(
+                      fontSize: 16,
                       color: Color(0xFF5263FC),
                       fontFamily: 'Gilroy-bold',
                     ),
