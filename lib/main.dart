@@ -35,7 +35,7 @@ class Application extends StatelessWidget {
               textStyle: TextStyle(
                 fontSize: 16,
                 color: Colors.white,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
@@ -43,7 +43,7 @@ class Application extends StatelessWidget {
       ),
 
       // MaterialApp Home
-      home: SplashScreen(),
+      home: SwitchAccountScreen(),
     );
   }
 }
