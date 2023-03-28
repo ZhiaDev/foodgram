@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -93,10 +94,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: [
                           Text(
                             'Sign in to ',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontFamily: 'Gilroy-bold',
+                            style: GoogleFonts.outfit(
+                              textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                           SvgPicture.asset(
@@ -119,20 +122,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       cursorColor: Color(0xFF5263FC),
                       keyboardType: TextInputType.emailAddress,
                       style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Gilroy-medium',
-                          fontSize: 15),
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
                       focusNode: focusNode1,
                       decoration: InputDecoration(
                         contentPadding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                        labelText: '  Email ',
+                        labelText: ' Email',
                         labelStyle: TextStyle(
                           color: focusNode1.hasFocus
                               ? Color(0xFF5263FC)
                               : Color(0xFFFFFFFF),
                           fontSize: 15,
-                          fontFamily: 'Gilroy-medium',
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
@@ -165,20 +167,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       obscureText: true,
                       style: TextStyle(
                         color: Colors.white,
-                        fontFamily: 'Gilroy-medium',
                         fontSize: 15,
                       ),
                       focusNode: focusNode2,
                       decoration: InputDecoration(
                         contentPadding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                        labelText: '  Password ',
+                        labelText: ' Password',
                         labelStyle: TextStyle(
                           color: focusNode2.hasFocus
                               ? Color(0xFF5263FC)
                               : Color(0xFFFFFFFF),
                           fontSize: 15,
-                          fontFamily: 'Gilroy-medium',
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
@@ -204,19 +204,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   top: 262,
                   child: TextButton(
                     onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 3),
-                      child: Text(
-                        'Sign in',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
 
                 // Sign up Button
                 Positioned(
-                  bottom: 64,
+                  top: 400,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -227,22 +224,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: 183,
                           child: Center(
                             child: Text(
-                              'Don’t have an account?',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: 'Gilroy-bold',
-                                color: Color(0xFF898A8D),
+                              'Don’t have an account? / ',
+                              style: GoogleFonts.outfit(
+                                textStyle: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xFFFFFFFF).withOpacity(0.6),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                      Text(
-                        ' / ',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Gilroy-bold',
-                          color: Color(0xFF898A8D),
                         ),
                       ),
                       GestureDetector(
@@ -253,10 +244,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Center(
                             child: Text(
                               'Sign up',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: 'Gilroy-bold',
-                                color: Color(0xFFFFFFFF),
+                              style: GoogleFonts.outfit(
+                                textStyle: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFFFFFFFF),
+                                ),
                               ),
                             ),
                           ),
