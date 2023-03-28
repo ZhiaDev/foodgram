@@ -11,11 +11,11 @@ environment:
 dependencies:
   flutter_svg: ^1.1.6
   dotted_border: ^2.0.0+3
+  google_fonts: ^4.0.3
+  cupertino_icons: ^1.0.2
+
   flutter:
     sdk: flutter
-
-
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -32,39 +32,3 @@ flutter:
     - assets/images/switch_account/
     - assets/images/login_screen/
     - assets/images/home_screen/
-    # - assets/images/splash_screen/pattern.png
-    # - assets/images/splash_screen/logo.png
-    # - assets/images/switch_account/background_picture.png
-    # - assets/images/switch_account/avatar.png
-    # - assets/images/login_screen/rocket.png
-    # - assets/images/login_screen/logo.svg
-    # - assets/images/home_screen/plus.svg
-    # - assets/images/home_screen/logo.svg
-    # - assets/images/home_screen/icn_messenger.svg
-
-
-  fonts:
-  
-    - family: Gilroy
-      fonts:
-        - asset: assets/fonts/Gilroy_Regular.ttf
-
-    - family: Gilroy-medium
-      fonts:
-        - asset: assets/fonts/Gilroy_Medium.ttf
-
-    - family: Gilroy-semibold
-      fonts:
-        - asset: assets/fonts/Gilroy_SemiBold.ttf
-
-    - family: Gilroy-bold
-      fonts:
-        - asset: assets/fonts/Gilroy_Bold.ttf
-
-    - family: IranSans
-      fonts:
-        - asset: assets/fonts/IRANSans_Regular.ttf
-
-    - family: IranSans-bold
-      fonts:
-        - asset: assets/fonts/IRANSans_Bold.ttf
