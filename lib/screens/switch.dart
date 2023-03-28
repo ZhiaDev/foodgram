@@ -12,7 +12,7 @@ class SwitchAccountScreen extends StatelessWidget {
       body: Stack(
         children: [
           // background and sign in & sign up
-          backgroundAndSigninSignup(),
+          backgroundAndSigninSignup(context),
           // SwitchUser Box
           userBox(context),
         ],
@@ -20,7 +20,7 @@ class SwitchAccountScreen extends StatelessWidget {
     );
   }
 
-  Widget backgroundAndSigninSignup() {
+  Widget backgroundAndSigninSignup(context) {
     return Column(
       children: [
         Expanded(
@@ -34,34 +34,7 @@ class SwitchAccountScreen extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 132, bottom: 64),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Don’t have an account? / ',
-                style: GoogleFonts.outfit(
-                  textStyle: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFFFFFFFF).withOpacity(0.6),
-                  ),
-                ),
-              ),
-              Text(
-                'Sign up',
-                style: GoogleFonts.outfit(
-                  textStyle: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        )
+        SizedBox(height: MediaQuery.of(context).size.height / 5)
       ],
     );
   }
