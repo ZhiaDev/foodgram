@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SwitchAccountScreen extends StatelessWidget {
   const SwitchAccountScreen({super.key});
@@ -40,20 +41,24 @@ class SwitchAccountScreen extends StatelessWidget {
             children: [
               Text(
                 'Don’t have an account? / ',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'Gilroy-bold',
-                  color: Color(0xFF898A8D),
+                style: GoogleFonts.outfit(
+                  textStyle: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFFFFFFFF).withOpacity(0.6),
+                  ),
                 ),
               ),
               Text(
                 'Sign up',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'Gilroy-bold',
-                  color: Color(0xFFFFFFFF),
+                style: GoogleFonts.outfit(
+                  textStyle: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         )
@@ -95,9 +100,12 @@ class SwitchAccountScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+
+                  // Box Content
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 32),
+                      // Avatar Picture
                       ClipRRect(
                         borderRadius: BorderRadius.circular(24),
                         child: Image(
@@ -108,45 +116,57 @@ class SwitchAccountScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 20),
+
+                      // Name Of User
                       Text(
                         'Parsa Sharifi',
-                        style: TextStyle(
-                          fontFamily: 'Gilroy-bold',
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                      ),
-                      SizedBox(height: 22),
-                      TextButton(
-                        onPressed: () {},
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 4),
-                          child: Text(
-                            'Confirm',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
+                        style: GoogleFonts.outfit(
+                          textStyle: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                      SizedBox(height: 12),
-                      TextButton(
-                        style: TextButton.styleFrom(
-                          minimumSize: Size(170, 46),
-                          backgroundColor: Colors.transparent,
-                        ),
-                        onPressed: () {},
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 4),
-                          child: Text(
-                            'switch account',
-                            style: TextStyle(
-                              
-                              color: Colors.white,
+
+                      // Button: Confrim and Switch Account
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  'Confirm',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(width: 12),
+                            Expanded(
+                              child: TextButton(
+                                style: TextButton.styleFrom(
+                                  backgroundColor:
+                                      Color(0xFF5263FC).withOpacity(0.4),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  'switch account',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
+
+                      // End Column
                     ],
                   ),
                 ),
