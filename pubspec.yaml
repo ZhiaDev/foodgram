@@ -9,7 +9,7 @@ environment:
   sdk: '>=2.18.0 <3.0.0'
 
 dependencies:
-  flutter_svg: ^1.1.6
+  flutter_svg: ^2.0.4
   dotted_border: ^2.0.0+3
   google_fonts: ^4.0.3
   cupertino_icons: ^1.0.2
@@ -32,3 +32,4 @@ flutter:
     - assets/images/switch_account/
     - assets/images/login_screen/
     - assets/images/home_screen/
+    - assets/icons/
