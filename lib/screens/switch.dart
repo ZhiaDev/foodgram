@@ -123,12 +123,15 @@ class SwitchAccountScreen extends StatelessWidget {
                             Expanded(
                               child: TextButton(
                                 style: TextButton.styleFrom(
-                                  backgroundColor:
-                                      Color(0xFF5263FC).withOpacity(0.4),
+                                  side: BorderSide(
+                                    color: Color(0xFFC5C5C5),
+                                    width: 2,
+                                  ),
+                                  backgroundColor: Colors.transparent,
                                 ),
                                 onPressed: () {},
                                 child: Text(
-                                  'switch account',
+                                  'Switch account',
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
