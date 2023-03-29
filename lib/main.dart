@@ -23,6 +23,9 @@ class Application extends StatelessWidget {
 
       // MaterialApp Theme
       theme: ThemeData(
+        textTheme: GoogleFonts.outfitTextTheme(
+          Theme.of(context).textTheme,
+        ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             shape: RoundedRectangleBorder(
@@ -43,7 +46,7 @@ class Application extends StatelessWidget {
       ),
 
       // MaterialApp Home
-      home: SwitchAccountScreen(),
+      home: HomeScreen(),
     );
   }
 }
