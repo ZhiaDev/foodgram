@@ -177,7 +177,7 @@ class ShareBottemSheet extends StatelessWidget {
             height: 64,
             width: 64,
             // ! HardCode: ProfilePicture
-            child: Image.asset('assets/images/switch_account/avatar.png'),
+            child: Image.asset('assets/avatars/user-32789.jpg'),
           ),
         ),
         SizedBox(height: 6),
