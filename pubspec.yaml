@@ -28,8 +28,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/splash_screen/
-    - assets/images/switch_account/
-    - assets/images/login_screen/
-    - assets/images/home_screen/
     - assets/icons/
+    - assets/avatars/
+    - assets/posts/
+    - assets/basics/
