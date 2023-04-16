@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _getImageBackground() {
     return Stack(
       children: [
-        Image.asset('assets/images/login_screen/rocket.png'),
+        Image.asset('assets/basics/rocket.png'),
         Container()
       ],
     );
