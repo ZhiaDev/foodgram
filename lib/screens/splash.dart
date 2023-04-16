@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
         color: Color(0xFF14151C),
         image: DecorationImage(
           repeat: ImageRepeat.repeat,
-          image: AssetImage('assets/images/splash_screen/pattern.png'),
+          image: AssetImage('assets/basics/pattern.png'),
         ),
       ),
       child: Scaffold(
@@ -21,7 +21,7 @@ class SplashScreen extends StatelessWidget {
           alignment: AlignmentDirectional.bottomCenter,
           children: [
             Center(
-              child: SvgPicture.asset('assets/images/splash_screen/logo.svg'),
+              child: SvgPicture.asset('assets/basics/logo-mono.svg'),
             ),
             Positioned(
               bottom: 41,
