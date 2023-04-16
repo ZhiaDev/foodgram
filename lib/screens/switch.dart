@@ -28,7 +28,7 @@ class SwitchAccountScreen extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/images/switch_account/background_picture.png',
+                  'assets/basics/switch-bg.png',
                 ),
               ),
             ),
@@ -83,7 +83,7 @@ class SwitchAccountScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(24),
                         child: Image(
                           image: AssetImage(
-                            'assets/images/switch_account/avatar.png',
+                            'assets/avatars/user-87653.jpg',
                           ),
                           height: 130,
                         ),
@@ -92,7 +92,7 @@ class SwitchAccountScreen extends StatelessWidget {
 
                       // Name Of User
                       Text(
-                        'Parsa Sharifi',
+                        'Katrina Bartell',
                         style: GoogleFonts.outfit(
                           textStyle: TextStyle(
                             fontSize: 18,
@@ -104,7 +104,7 @@ class SwitchAccountScreen extends StatelessWidget {
 
                       // Button: Confrim and Switch Account
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
+                        padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
