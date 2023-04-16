@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           SvgPicture.asset(
-                            'assets/images/login_screen/logo.svg',
+                            'assets/basics/logo-secondary.svg',
                             height: 25,
                           )
                         ],
