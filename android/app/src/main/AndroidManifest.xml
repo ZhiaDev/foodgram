@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.moodgram">
+    package="com.example.foodgram">
    <application
-        android:label="moodgram"
+        android:label="foodgram"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

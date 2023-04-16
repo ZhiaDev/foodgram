@@ -1,4 +1,4 @@
-package com.example.moodgram
+package com.example.foodgram
 
 import io.flutter.embedding.android.FlutterActivity
 

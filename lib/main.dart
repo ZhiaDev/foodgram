@@ -1,7 +1,6 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../screens/splash.dart';
 import '../screens/login.dart';
@@ -12,9 +11,14 @@ void main() {
   runApp(const Application());
 }
 
-class Application extends StatelessWidget {
+class Application extends StatefulWidget {
   const Application({super.key});
 
+  @override
+  State<Application> createState() => _ApplicationState();
+}
+
+class _ApplicationState extends State<Application> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,8 +30,10 @@ class Application extends StatelessWidget {
         textTheme: GoogleFonts.outfitTextTheme(
           Theme.of(context).textTheme,
         ),
+        brightness: Brightness.dark,
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
+            padding: EdgeInsets.symmetric(horizontal: 18),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
