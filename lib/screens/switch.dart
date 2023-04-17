@@ -110,9 +110,16 @@ class SwitchAccountScreen extends StatelessWidget {
                           children: [
                             Expanded(
                               child: TextButton(
+                                style: TextButton.styleFrom(
+                                  side: BorderSide(
+                                    color: Color(0xFFC5C5C5),
+                                    width:1.5,
+                                  ),
+                                  backgroundColor: Colors.transparent,
+                                ),
                                 onPressed: () {},
                                 child: Text(
-                                  'Confirm',
+                                  'Switch account',
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
@@ -122,16 +129,9 @@ class SwitchAccountScreen extends StatelessWidget {
                             SizedBox(width: 12),
                             Expanded(
                               child: TextButton(
-                                style: TextButton.styleFrom(
-                                  side: BorderSide(
-                                    color: Color(0xFFC5C5C5),
-                                    width: 2,
-                                  ),
-                                  backgroundColor: Colors.transparent,
-                                ),
                                 onPressed: () {},
                                 child: Text(
-                                  'Switch account',
+                                  'Confirm',
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
