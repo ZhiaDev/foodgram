@@ -1,26 +1,27 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../screens/splash.dart';
 import '../screens/login.dart';
 import '../screens/switch.dart';
 import '../screens/home.dart';
+import '../screens/search.dart';
 
 void main() {
   runApp(const Application());
 }
 
-class Application extends StatefulWidget {
+class Application extends StatelessWidget {
   const Application({super.key});
 
   @override
-  State<Application> createState() => _ApplicationState();
-}
-
-class _ApplicationState extends State<Application> {
-  @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.white,
+      statusBarBrightness: Brightness.dark,
+    ));
     return MaterialApp(
       // MaterialApp Banner
       debugShowCheckedModeBanner: false,
@@ -31,6 +32,8 @@ class _ApplicationState extends State<Application> {
           Theme.of(context).textTheme,
         ),
         brightness: Brightness.dark,
+
+        // Button Styles
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             padding: EdgeInsets.symmetric(horizontal: 18),
@@ -40,6 +43,8 @@ class _ApplicationState extends State<Application> {
             minimumSize: Size(128, 46),
             backgroundColor: Color(0xFF5263FC),
             foregroundColor: Color(0xFF14151C),
+
+            // Test Styles
             textStyle: GoogleFonts.outfit(
               textStyle: TextStyle(
                 fontSize: 16,
@@ -52,7 +57,7 @@ class _ApplicationState extends State<Application> {
       ),
 
       // MaterialApp Home
-      home: HomeScreen(),
+      home: SearchScreen(),
     );
   }
 }
