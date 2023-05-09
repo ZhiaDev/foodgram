@@ -2,14 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:foodgram/screens/actiivity.dart';
-import 'package:foodgram/screens/add.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
+import '../screens/add.dart';
 import '../screens/splash.dart';
 import '../screens/login.dart';
 import '../screens/switch.dart';
 import '../screens/home.dart';
 import '../screens/search.dart';
+import '../screens/activity.dart';
 
 void main() {
   runApp(const Application());
