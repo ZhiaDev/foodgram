@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:foodgram/screens/actiivity.dart';
+import 'package:foodgram/screens/add.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../screens/splash.dart';
 import '../screens/login.dart';
@@ -18,10 +20,10 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarBrightness: Brightness.dark,
-    ));
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    //   statusBarColor: Colors.white,
+    //   statusBarBrightness: Brightness.dark,
+    // ));
     return MaterialApp(
       // MaterialApp Banner
       debugShowCheckedModeBanner: false,
@@ -31,17 +33,17 @@ class Application extends StatelessWidget {
         textTheme: GoogleFonts.outfitTextTheme(
           Theme.of(context).textTheme,
         ),
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
 
         // Button Styles
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             padding: EdgeInsets.symmetric(horizontal: 18),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            minimumSize: Size(128, 46),
-            backgroundColor: Color(0xFF5263FC),
+            // shape: RoundedRectangleBorder(
+            //   borderRadius: BorderRadius.circular(15),
+            // ),
+            // minimumSize: Size(128, 46),
+            backgroundColor: Color(0xFFE5383B),
             foregroundColor: Color(0xFF14151C),
 
             // Test Styles
@@ -57,7 +59,7 @@ class Application extends StatelessWidget {
       ),
 
       // MaterialApp Home
-      home: SearchScreen(),
+      home: ActivityScreen(),
     );
   }
 }
