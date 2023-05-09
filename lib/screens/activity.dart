@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../model/activity_enum.dart';
+import '../utils/style.dart';
 
 class ActivityScreen extends StatefulWidget {
   const ActivityScreen({super.key});
@@ -33,10 +34,11 @@ class _ActivityScreenState extends State<ActivityScreen>
                 labelStyle: GoogleFonts.outfit(
                   textStyle: const TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.w400,
+                    color: MyColors.black,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
-                indicatorColor: const Color(0xFFE5383B), //primery
+                indicatorColor: MyColors.primery,
                 labelColor: Colors.black,
                 indicatorPadding: const EdgeInsets.symmetric(
                   horizontal: 16,
@@ -82,6 +84,7 @@ class _ActivityScreenState extends State<ActivityScreen>
               style: GoogleFonts.outfit(
                 textStyle: const TextStyle(
                   fontSize: 20,
+                  color: MyColors.black,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -123,6 +126,7 @@ class _ActivityScreenState extends State<ActivityScreen>
               style: GoogleFonts.outfit(
                 textStyle: const TextStyle(
                   fontSize: 20,
+                  color: MyColors.black,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -177,6 +181,7 @@ class _ActivityScreenState extends State<ActivityScreen>
               style: GoogleFonts.outfit(
                 textStyle: const TextStyle(
                   fontSize: 20,
+                  color: MyColors.black,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -244,7 +249,7 @@ class _ActivityScreenState extends State<ActivityScreen>
             height: 6,
             width: 6,
             decoration: BoxDecoration(
-              color: Color(0xFFBA181B), //red-3
+              color: MyColors.red3,
               shape: BoxShape.circle,
             ),
           ),
@@ -267,7 +272,7 @@ class _ActivityScreenState extends State<ActivityScreen>
                     text: 'Parsa Sharifi',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
+                      color: MyColors.black,
                       fontSize: 14,
                     ),
                   ),
@@ -275,7 +280,7 @@ class _ActivityScreenState extends State<ActivityScreen>
                     text: '  Started following you  ',
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      color: Color(0xFF8C8C8C), //grey-1
+                      color: MyColors.grey1,
                       fontSize: 12,
                     ),
                   ),
@@ -283,7 +288,7 @@ class _ActivityScreenState extends State<ActivityScreen>
                     text: '3min',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFF8C8C8C), //grey-1
+                      color: MyColors.grey1,
                       fontSize: 12,
                     ),
                   ),
@@ -313,7 +318,7 @@ class _ActivityScreenState extends State<ActivityScreen>
             'Follow',
             style: GoogleFonts.outfit(
               textStyle: TextStyle(
-                color: Colors.white,
+                color: MyColors.white,
                 fontWeight: FontWeight.w600,
                 fontSize: 12,
               ),
@@ -338,7 +343,7 @@ class _ActivityScreenState extends State<ActivityScreen>
               borderRadius: BorderRadius.circular(10),
             ),
             side: BorderSide(
-              color: Color(0xFF8C8C8C), //grey-1
+              color: MyColors.grey1,
               width: 1,
             ),
             backgroundColor: Colors.transparent,
@@ -347,7 +352,7 @@ class _ActivityScreenState extends State<ActivityScreen>
             'Message',
             style: GoogleFonts.outfit(
               textStyle: TextStyle(
-                color: Color(0xFF8C8C8C), //grey-1,
+                color: MyColors.grey1,
                 fontWeight: FontWeight.w600,
                 fontSize: 12,
               ),
