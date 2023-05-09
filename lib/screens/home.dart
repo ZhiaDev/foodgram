@@ -4,6 +4,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../components/bottom_sheet.dart';
+import '../utils/style.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,9 +12,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF14151C),
+      backgroundColor: MyColors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xFF14151C),
+        backgroundColor: MyColors.white,
         centerTitle: false,
         elevation: 0,
         title: SvgPicture.asset(
@@ -25,6 +26,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(12.0),
             child: SvgPicture.asset(
               'assets/icons/direct.svg',
+              colorFilter: ColorFilter.mode(MyColors.black, BlendMode.srcIn),
               height: 24,
             ),
           )
@@ -72,9 +74,9 @@ class HomeScreen extends StatelessWidget {
         child: ListView.builder(
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemCount: 20,
+          itemCount: 9,
           itemBuilder: (BuildContext context, int index) {
-            return index == 0 ? _addStory() : story();
+            return index == 0 ? _addStory() : story(index);
           },
         ),
       ),
@@ -85,15 +87,15 @@ class HomeScreen extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         // ! HardCode: Posts Count
-        childCount: 5,
+        childCount: 10,
         (context, index) {
-          return post(context);
+          return post(context, index);
         },
       ),
     );
   }
 
-  Widget post(context) {
+  Widget post(context, index) {
     return Column(
       children: [
         SizedBox(height: 32),
@@ -110,13 +112,13 @@ class HomeScreen extends StatelessWidget {
                 padding: EdgeInsets.all(3.5),
                 strokeWidth: 2,
                 dashPattern: [13, 1],
-                color: Color(0xFF5263FC),
+                color: MyColors.primery,
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   child: Container(
                     height: 36,
                     width: 36, // 56 for story
-                    child: Image.asset('assets/avatars/user-79099.jpg'),
+                    child: Image.asset('assets/avatars/user-$index.jpg'),
                   ),
                 ),
               ),
@@ -128,22 +130,22 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'KylixDev',
+                    'Sidney_Davis',
                     style: GoogleFonts.outfit(
                       textStyle: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xFFFFFFFF),
+                        color: MyColors.black,
                       ),
                     ),
                   ),
                   Text(
-                    'Berlin',
+                    'Yogurt and orange',
                     style: GoogleFonts.outfit(
                       textStyle: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
-                        color: Color(0xFFFFFFFF).withOpacity(0.7),
+                        color: MyColors.grey1,
                       ),
                     ),
                   ),
@@ -152,7 +154,10 @@ class HomeScreen extends StatelessWidget {
               Spacer(),
               // todo: MoreButton Function
               GestureDetector(
-                child: Icon(Icons.more_vert),
+                child: Icon(
+                  Icons.more_vert,
+                  color: MyColors.black,
+                ),
                 onTap: () {},
               ),
             ],
@@ -172,8 +177,8 @@ class HomeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 image: DecorationImage(
-                  image: AssetImage('assets/posts/post-22380.jpg'),
-                ),
+                    image: AssetImage('assets/posts/post-${index + 2}.png'),
+                    fit: BoxFit.cover),
               ),
               height: MediaQuery.of(context).size.width / 1.081,
               width: MediaQuery.of(context).size.width / 1.081,
@@ -200,9 +205,12 @@ class HomeScreen extends StatelessWidget {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            Color(0xFF656565).withOpacity(0.2),
-                            Color(0xFF656565).withOpacity(0.5),
-                            Color(0xFF656565).withOpacity(0.2),
+                            // Color(0xFF656565).withOpacity(0.2),
+                            // Color(0xFF656565).withOpacity(0.5),
+                            // Color(0xFF656565).withOpacity(0.2),
+                            MyColors.white.withOpacity(0.6),
+                            MyColors.white.withOpacity(0.5),
+                            MyColors.white.withOpacity(0.6),
                           ],
                         ),
                       ),
@@ -215,13 +223,19 @@ class HomeScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               SizedBox(width: 26),
-                              SvgPicture.asset('assets/icons/like.svg'),
+                              SvgPicture.asset(
+                                'assets/icons/like.svg',
+                                colorFilter: ColorFilter.mode(
+                                  MyColors.black,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
                               SizedBox(width: 6),
                               Text(
                                 '3.2K',
                                 style: GoogleFonts.outfit(
                                   textStyle: TextStyle(
-                                    color: Colors.white,
+                                    color: MyColors.black,
                                     fontSize: 12,
                                   ),
                                 ),
@@ -231,13 +245,19 @@ class HomeScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SvgPicture.asset('assets/icons/comment.svg'),
+                              SvgPicture.asset(
+                                'assets/icons/comment.svg',
+                                colorFilter: ColorFilter.mode(
+                                  MyColors.black,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
                               SizedBox(width: 6),
                               Text(
                                 '1.4K',
                                 style: GoogleFonts.outfit(
                                   textStyle: TextStyle(
-                                    color: Colors.white,
+                                    color: MyColors.black,
                                     fontSize: 12,
                                   ),
                                 ),
@@ -254,6 +274,10 @@ class HomeScreen extends StatelessWidget {
                                 child: InkWell(
                                   child: SvgPicture.asset(
                                     'assets/icons/share.svg',
+                                    colorFilter: ColorFilter.mode(
+                                      MyColors.black,
+                                      BlendMode.srcIn,
+                                    ),
                                     width: 24,
                                     height: 24,
                                     fit: BoxFit.scaleDown,
@@ -265,7 +289,13 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              SvgPicture.asset('assets/icons/save.svg'),
+                              SvgPicture.asset(
+                                'assets/icons/save.svg',
+                                colorFilter: ColorFilter.mode(
+                                  MyColors.black,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
                               SizedBox(width: 26),
                             ],
                           ),
@@ -282,7 +312,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget story() {
+  Widget story(index) {
     // ! HardCode: Stories
     return Container(
       // padding: EdgeInsets.all(8),
@@ -295,14 +325,14 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.all(3.5),
             strokeWidth: 2,
             dashPattern: [13, 1],
-            color: Color(0xFF5263FC),
+            color: MyColors.primery,
             child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(18 - 3)),
               child: Container(
                 height: 56,
                 width: 56, // 36 for story
                 // ! HardCode: ProfilePicture
-                child: Image.asset('assets/avatars/user-87653.jpg'),
+                child: Image.asset('assets/avatars/user-${index + 3}.jpg'),
               ),
             ),
           ),
@@ -311,7 +341,7 @@ class HomeScreen extends StatelessWidget {
             'KylixDev',
             style: GoogleFonts.outfit(
               textStyle: TextStyle(
-                color: Colors.white,
+                color: MyColors.black,
                 fontSize: 12,
               ),
             ),
@@ -324,7 +354,7 @@ class HomeScreen extends StatelessWidget {
   Widget _addStory() {
     // todo: AddStory Function
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+      padding: EdgeInsets.only(top: 12, bottom: 12, right: 8, left: 12),
       child: Column(
         children: [
           Container(
@@ -332,10 +362,14 @@ class HomeScreen extends StatelessWidget {
             height: 64,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: Colors.white, width: 2),
+              border: Border.all(color: MyColors.black, width: 2),
             ),
             child: SvgPicture.asset(
               'assets/icons/plus.svg',
+              colorFilter: ColorFilter.mode(
+                MyColors.primery,
+                BlendMode.srcIn,
+              ),
               fit: BoxFit.scaleDown,
             ),
           ),
@@ -344,7 +378,7 @@ class HomeScreen extends StatelessWidget {
             'Your Story',
             style: GoogleFonts.outfit(
               textStyle: TextStyle(
-                color: Colors.white,
+                color: MyColors.black,
                 fontSize: 12,
               ),
             ),

@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:foodgram/utils/style.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ShareBottemSheet extends StatelessWidget {
@@ -22,9 +23,12 @@ class ShareBottemSheet extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color(0xFF656565).withOpacity(0.2),
-                Color(0xFF656565).withOpacity(0.4),
-                Color(0xFF656565).withOpacity(0.2),
+                // Color(0xFF656565).withOpacity(0.2),
+                // Color(0xFF656565).withOpacity(0.4),
+                // Color(0xFF656565).withOpacity(0.2),
+                MyColors.grey4.withOpacity(0.6),
+                MyColors.grey4.withOpacity(0.5),
+                MyColors.grey4.withOpacity(0.6),
               ],
             ),
           ),
@@ -51,8 +55,9 @@ class ShareBottemSheet extends StatelessWidget {
                     height: 5,
                     width: 64,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.white),
+                      borderRadius: BorderRadius.circular(50),
+                      color: MyColors.black,
+                    ),
                   ),
                   // Share Text & Icon
                   Row(
@@ -62,7 +67,7 @@ class ShareBottemSheet extends StatelessWidget {
                         'Share',
                         style: GoogleFonts.outfit(
                           textStyle: TextStyle(
-                            color: Colors.white,
+                            color: MyColors.black,
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
                           ),
@@ -70,6 +75,10 @@ class ShareBottemSheet extends StatelessWidget {
                       ),
                       SvgPicture.asset(
                         'assets/icons/send.svg',
+                        colorFilter: ColorFilter.mode(
+                          MyColors.black,
+                          BlendMode.srcIn,
+                        ),
                         height: 24,
                       ),
                     ],
@@ -79,7 +88,7 @@ class ShareBottemSheet extends StatelessWidget {
                     margin: EdgeInsets.symmetric(vertical: 32),
                     height: 46,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.3),
+                      color: MyColors.white.withOpacity(0.7),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
@@ -91,15 +100,19 @@ class ShareBottemSheet extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             'assets/icons/search.svg',
+                            colorFilter: ColorFilter.mode(
+                              MyColors.black,
+                              BlendMode.srcIn,
+                            ),
                             height: 24,
                           ),
                           SizedBox(width: 8),
                           Expanded(
                             child: TextField(
                               style: TextStyle(
-                                color: Colors.white,
+                                color: MyColors.black,
                               ),
-                              cursorColor: Colors.white,
+                              cursorColor: MyColors.black,
                               decoration: InputDecoration(
                                 hintText: 'Search...',
                                 enabledBorder: InputBorder.none,
@@ -116,9 +129,9 @@ class ShareBottemSheet extends StatelessWidget {
             ),
             SliverGrid(
               delegate: SliverChildBuilderDelegate(
-                childCount: 30,
+                childCount: 12,
                 (context, index) {
-                  return _getShareProfiles();
+                  return _getShareProfiles(index);
                 },
               ),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -140,7 +153,7 @@ class ShareBottemSheet extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.5),
+                  color: Colors.black.withOpacity(0.3),
                   blurRadius: 20,
                   offset: Offset(0, 5),
                 ),
@@ -150,6 +163,12 @@ class ShareBottemSheet extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
+              style: TextButton.styleFrom(
+                minimumSize: Size(128, 46),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+                ),
+              ),
               child: Text(
                 'Send',
                 style: GoogleFonts.outfit(
@@ -167,17 +186,16 @@ class ShareBottemSheet extends StatelessWidget {
     );
   }
 
-  Widget _getShareProfiles() {
+  Widget _getShareProfiles(index) {
     return Column(
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(18),
           child: Container(
-            color: Colors.grey[400],
-            height: 64,
+            color: MyColors.black,
             width: 64,
             // ! HardCode: ProfilePicture
-            child: Image.asset('assets/avatars/user-32789.jpg'),
+            child: Image.asset('assets/avatars/user-$index.jpg'),
           ),
         ),
         SizedBox(height: 6),
@@ -190,7 +208,7 @@ class ShareBottemSheet extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: GoogleFonts.outfit(
               textStyle: TextStyle(
-                color: Colors.white,
+                color: MyColors.black,
                 fontSize: 12,
               ),
             ),

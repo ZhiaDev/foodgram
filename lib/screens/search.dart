@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:foodgram/utils/style.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -9,7 +10,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF14151C),
+      backgroundColor: MyColors.white,
       body: SafeArea(
           child: CustomScrollView(
         slivers: [_getSearchBox(), _getCategories(context), _getExplore()],
@@ -23,7 +24,7 @@ class SearchScreen extends StatelessWidget {
         margin: EdgeInsets.only(right: 16, left: 16, top: 8),
         height: 46,
         decoration: BoxDecoration(
-          color: Color(0xFF202232),
+          color: MyColors.grey4,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Padding(
@@ -35,15 +36,16 @@ class SearchScreen extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 'assets/icons/search.svg',
+                colorFilter: ColorFilter.mode(MyColors.black, BlendMode.srcIn),
                 height: 24,
               ),
               SizedBox(width: 8),
               Expanded(
                 child: TextField(
                   style: TextStyle(
-                    color: Colors.white,
+                    color: MyColors.black,
                   ),
-                  cursorColor: Colors.white,
+                  cursorColor: MyColors.black,
                   decoration: InputDecoration(
                     hintText: 'Search...',
                     enabledBorder: InputBorder.none,
@@ -54,6 +56,7 @@ class SearchScreen extends StatelessWidget {
               SizedBox(width: 14),
               SvgPicture.asset(
                 'assets/icons/scan.svg',
+                colorFilter: ColorFilter.mode(MyColors.black, BlendMode.srcIn),
                 height: 24,
               ),
             ],
@@ -80,17 +83,17 @@ class SearchScreen extends StatelessWidget {
           separatorBuilder: (BuildContext context, int index) {
             return Container(
               decoration: BoxDecoration(
-                color: Color(0xFF202232),
+                color: MyColors.grey4,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 14),
                   child: Text(
                     'category k.$index',
                     style: GoogleFonts.outfit(
                       textStyle: TextStyle(
-                        color: Colors.white,
+                        color: MyColors.black,
                         fontSize: 12,
                       ),
                     ),
