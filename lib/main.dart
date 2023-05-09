@@ -61,7 +61,7 @@ class Application extends StatelessWidget {
       ),
 
       // MaterialApp Home
-      home: ActivityScreen(),
+      home: AddPost(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:foodgram/utils/style.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AddPost extends StatefulWidget {
@@ -15,9 +16,9 @@ class _AddPostState extends State<AddPost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF14151C),
+      backgroundColor: MyColors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xFF14151C),
+        backgroundColor: MyColors.white,
         centerTitle: false,
         elevation: 0,
         title: Row(
@@ -26,7 +27,7 @@ class _AddPostState extends State<AddPost> {
               'Gallery',
               style: GoogleFonts.outfit(
                 textStyle: TextStyle(
-                  color: Colors.white,
+                  color: MyColors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
@@ -35,6 +36,7 @@ class _AddPostState extends State<AddPost> {
             SizedBox(width: 6),
             SvgPicture.asset(
               'assets/icons/arrowdown.svg',
+              colorFilter: ColorFilter.mode(MyColors.black, BlendMode.srcIn),
               height: 24,
             ),
           ],
@@ -61,10 +63,10 @@ class _AddPostState extends State<AddPost> {
   Widget _getChoosePannel(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFF202232),
+        color: MyColors.grey4,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(12),
-          topRight: Radius.circular(12),
+          topLeft: Radius.circular(14),
+          topRight: Radius.circular(14),
         ),
       ),
       height: 84,
@@ -80,7 +82,7 @@ class _AddPostState extends State<AddPost> {
                 'Cancel',
                 style: GoogleFonts.outfit(
                   textStyle: TextStyle(
-                    color: Color(0xFFFD3F3F),
+                    color: MyColors.red2,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),
@@ -92,7 +94,7 @@ class _AddPostState extends State<AddPost> {
               'choose',
               style: GoogleFonts.outfit(
                 textStyle: TextStyle(
-                  color: Color(0xFF7A7A7D),
+                  color: MyColors.grey1,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
@@ -102,7 +104,7 @@ class _AddPostState extends State<AddPost> {
               'Next',
               style: GoogleFonts.outfit(
                 textStyle: TextStyle(
-                  color: Colors.white,
+                  color: MyColors.black,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
