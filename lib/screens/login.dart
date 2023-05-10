@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../utils/style.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -32,16 +33,12 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Container(
         // Background gradient
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFF323A99), Color(0xFF5263FC)],
-          ),
+          color: MyColors.primery,
         ),
         child: Stack(
           alignment: AlignmentDirectional.bottomCenter,
           children: [
-            _getImageBackground(), // rocket background
+            _getImageBackground(),
             _getLoginContainer(),
           ],
         ),
@@ -52,7 +49,12 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _getImageBackground() {
     return Stack(
       children: [
-        Image.asset('assets/basics/rocket.png'),
+        Container(
+          height: MediaQuery.of(context).size.height/2,
+            child: Image.asset(
+          'assets/basics/banner.png',
+          fit: BoxFit.cover,
+        )),
         Container()
       ],
     );
@@ -69,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
           flex: 53,
           child: Container(
             decoration: BoxDecoration(
-              color: Color(0xFF14151C),
+              color: MyColors.white,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(36),
                 topRight: Radius.circular(36),
@@ -95,12 +97,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           Text(
                             'Sign in to ',
                             style: GoogleFonts.outfit(
+                                textStyle: GoogleFonts.outfit(
                               textStyle: TextStyle(
-                                color: Colors.white,
+                                color: MyColors.black,
                                 fontSize: 20,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                               ),
-                            ),
+                            )),
                           ),
                           SvgPicture.asset(
                             'assets/basics/logo-secondary.svg',
@@ -119,11 +122,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 46,
                     width: 330,
                     child: TextField(
-                      cursorColor: Color(0xFF5263FC),
+                      cursorColor: MyColors.primery,
                       keyboardType: TextInputType.emailAddress,
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
+                        color: MyColors.black,
+                        fontSize: 16,
                       ),
                       focusNode: focusNode1,
                       decoration: InputDecoration(
@@ -132,21 +135,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         labelText: ' Email',
                         labelStyle: TextStyle(
                           color: focusNode1.hasFocus
-                              ? Color(0xFF5263FC)
-                              : Color(0xFFFFFFFF),
+                              ? MyColors.primery
+                              : MyColors.black,
                           fontSize: 15,
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(14),
                           borderSide: BorderSide(
-                            color: Color(0xFFC5C5C5),
+                            color: MyColors.grey2,
                             width: 3,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(14),
                           borderSide: BorderSide(
-                            color: Color(0xFF5263FC),
+                            color: MyColors.primery,
                             width: 3,
                           ),
                         ),
@@ -162,12 +165,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 46,
                     width: 330,
                     child: TextField(
-                      cursorColor: Color(0xFF5263FC),
+                      cursorColor: MyColors.primery,
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
+                        color: MyColors.black,
+                        fontSize: 16,
                       ),
                       focusNode: focusNode2,
                       decoration: InputDecoration(
@@ -176,21 +179,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         labelText: ' Password',
                         labelStyle: TextStyle(
                           color: focusNode2.hasFocus
-                              ? Color(0xFF5263FC)
-                              : Color(0xFFFFFFFF),
+                              ? MyColors.primery
+                              : MyColors.black,
                           fontSize: 15,
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(14),
                           borderSide: BorderSide(
-                            color: Color(0xFFC5C5C5),
+                            color: MyColors.grey2,
                             width: 3,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(14),
                           borderSide: BorderSide(
-                            color: Color(0xFF5263FC),
+                            color: MyColors.primery,
                             width: 3,
                           ),
                         ),
@@ -203,10 +206,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 Positioned(
                   top: 262,
                   child: TextButton(
+                    style: TextButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      foregroundColor: MyColors.grey3,
+                      minimumSize: Size(130, 46),
+                    ),
                     onPressed: () {},
                     child: Text(
                       'Sign in',
-                      style: TextStyle(color: Colors.white),
+                      style: GoogleFonts.outfit(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -229,7 +245,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 textStyle: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
-                                  color: Color(0xFFFFFFFF).withOpacity(0.6),
+                                  color: MyColors.grey1,
                                 ),
                               ),
                             ),
@@ -248,7 +264,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 textStyle: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0xFFFFFFFF),
+                                  color: MyColors.black,
                                 ),
                               ),
                             ),

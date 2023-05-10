@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../utils/style.dart';
 
 class SwitchAccountScreen extends StatelessWidget {
   const SwitchAccountScreen({super.key});
@@ -8,7 +9,7 @@ class SwitchAccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF14151C),
+      backgroundColor: MyColors.primery,
       body: Stack(
         children: [
           // background and sign in & sign up
@@ -30,11 +31,11 @@ class SwitchAccountScreen extends StatelessWidget {
                 image: AssetImage(
                   'assets/basics/switch-bg.png',
                 ),
+                fit: BoxFit.cover,
               ),
             ),
           ),
         ),
-        SizedBox(height: MediaQuery.of(context).size.height / 5)
       ],
     );
   }
@@ -65,11 +66,12 @@ class SwitchAccountScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(36),
                     gradient: LinearGradient(
-                      begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
+                      begin: Alignment.topLeft,
                       colors: [
-                        Color.fromRGBO(159, 158, 159, 0.5),
-                        Color.fromRGBO(159, 158, 159, 0.2)
+                        MyColors.grey4.withOpacity(0.3),
+                        MyColors.grey4.withOpacity(0.1),
+                        MyColors.grey4.withOpacity(0.3),
                       ],
                     ),
                   ),
@@ -83,7 +85,7 @@ class SwitchAccountScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(24),
                         child: Image(
                           image: AssetImage(
-                            'assets/avatars/user-87653.jpg',
+                            'assets/avatars/user-1.jpg',
                           ),
                           height: 130,
                         ),
@@ -95,9 +97,9 @@ class SwitchAccountScreen extends StatelessWidget {
                         'Katrina Bartell',
                         style: GoogleFonts.outfit(
                           textStyle: TextStyle(
-                            fontSize: 18,
                             fontWeight: FontWeight.w600,
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
                       ),
@@ -111,11 +113,16 @@ class SwitchAccountScreen extends StatelessWidget {
                             Expanded(
                               child: TextButton(
                                 style: TextButton.styleFrom(
-                                  side: BorderSide(
-                                    color: Color(0xFFC5C5C5),
-                                    width:1.5,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14),
                                   ),
                                   backgroundColor: Colors.transparent,
+                                  foregroundColor: MyColors.grey3,
+                                  side: BorderSide(
+                                    color: Color(0xFFC5C5C5),
+                                    width: 1.5,
+                                  ),
+                                  minimumSize: Size(100, 46),
                                 ),
                                 onPressed: () {},
                                 child: Text(
@@ -129,6 +136,13 @@ class SwitchAccountScreen extends StatelessWidget {
                             SizedBox(width: 12),
                             Expanded(
                               child: TextButton(
+                                style: TextButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(14),
+                                  ),
+                                  foregroundColor: MyColors.grey3,
+                                  minimumSize: Size(100, 46),
+                                ),
                                 onPressed: () {},
                                 child: Text(
                                   'Confirm',

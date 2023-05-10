@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../utils/style.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -9,7 +10,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Color(0xFF14151C),
+        color: MyColors.primery,
         image: DecorationImage(
           repeat: ImageRepeat.repeat,
           image: AssetImage('assets/basics/pattern.png'),
@@ -33,7 +34,7 @@ class SplashScreen extends StatelessWidget {
                       textStyle: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xFFFFFFFF).withOpacity(0.6),
+                        color: MyColors.black,
                       ),
                     ),
                   ),
@@ -43,7 +44,7 @@ class SplashScreen extends StatelessWidget {
                       textStyle: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xFF5263FC),
+                        color: MyColors.white,
                       ),
                     ),
                   ),
