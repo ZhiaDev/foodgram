@@ -5,11 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../screens/add.dart';
-import '../screens/splash.dart';
-import '../screens/login.dart';
-import '../screens/switch.dart';
 import '../screens/home.dart';
+import '../screens/login.dart';
+import '../screens/splash.dart';
+import '../screens/switch.dart';
 import '../screens/search.dart';
+import '../screens/mscreen.dart';
+import '../screens/profile.dart';
 import '../screens/activity.dart';
 
 void main() {
@@ -36,10 +38,6 @@ class Application extends StatelessWidget {
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             padding: EdgeInsets.symmetric(horizontal: 18),
-            // shape: RoundedRectangleBorder(
-            //   borderRadius: BorderRadius.circular(15),
-            // ),
-            // minimumSize: Size(128, 46),
             backgroundColor: Color(0xFFE5383B),
             foregroundColor: Color(0xFF14151C),
 
@@ -56,7 +54,7 @@ class Application extends StatelessWidget {
       ),
 
       // MaterialApp Home
-      home: SplashScreen(),
+      home: MainScreen(),
     );
   }
 }
