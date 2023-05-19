@@ -7,7 +7,6 @@ import '../screens/add.dart';
 import '../screens/home.dart';
 import '../screens/profile.dart';
 import '../screens/search.dart';
-import '../utils/style.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -29,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          backgroundColor: MyColors.grey4,
+          backgroundColor: Color(0xFFEDEDED),
           showUnselectedLabels: false,
           showSelectedLabels: false,
           currentIndex: _SelectedBottomNavigationBarItem,
