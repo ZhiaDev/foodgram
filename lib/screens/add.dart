@@ -39,6 +39,17 @@ class _AddPostState extends State<AddPost> {
               colorFilter: ColorFilter.mode(MyColors.black, BlendMode.srcIn),
               height: 24,
             ),
+            Spacer(),
+            Text(
+              'Next',
+              style: GoogleFonts.outfit(
+                textStyle: TextStyle(
+                  color: MyColors.red2,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -53,7 +64,7 @@ class _AddPostState extends State<AddPost> {
                 _galleryIamges(),
               ],
             ),
-            _getChoosePannel(context),
+            // _getChoosePannel(context),
           ],
         ),
       ),
